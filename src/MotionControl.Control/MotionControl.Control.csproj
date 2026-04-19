@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RootNamespace>MotionControl.Control</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MotionControl.Domain\MotionControl.Domain.csproj" />
+    <ProjectReference Include="..\MotionControl.Device.Abstractions\MotionControl.Device.Abstractions.csproj" />
+    <ProjectReference Include="..\MotionControl.Diagnostics\MotionControl.Diagnostics.csproj" />
+    <ProjectReference Include="..\MotionControl.Contracts\MotionControl.Contracts.csproj" />
+    <ProjectReference Include="..\MotionControl.Infrastructure\MotionControl.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>

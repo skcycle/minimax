@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RootNamespace>MotionControl.App</RootNamespace>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="8.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MotionControl.Presentation\MotionControl.Presentation.csproj" />
+    <ProjectReference Include="..\MotionControl.Application\MotionControl.Application.csproj" />
+    <ProjectReference Include="..\MotionControl.Control\MotionControl.Control.csproj" />
+    <ProjectReference Include="..\MotionControl.Device.Abstractions\MotionControl.Device.Abstractions.csproj" />
+    <ProjectReference Include="..\MotionControl.Device.Zmc\MotionControl.Device.Zmc.csproj" />
+    <ProjectReference Include="..\MotionControl.Infrastructure\MotionControl.Infrastructure.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="appsettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

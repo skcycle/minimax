@@ -1,0 +1,37 @@
+{
+  "SystemConfiguration": {
+    "ControllerIp": "192.168.0.100",
+    "ControllerPort": 5005,
+    "PollingIntervalMs": 100,
+    "CommandTimeoutMs": 5000,
+    "HomingTimeoutMs": 60000,
+    "Axes": [
+      {
+        "AxisNumber": 0,
+        "Name": "X",
+        "GroupId": "Gantry1",
+        "MaxVelocity": 5000,
+        "MaxAcceleration": 20000,
+        "HomeSpeed": 100,
+        "HomeLatchSpeed": 10,
+        "SoftwareLowLimit": -1000,
+        "SoftwareHighLimit": 1000,
+        "HomeMode": 0,
+        "HomeDirection": 0
+      },
+      {
+        "AxisNumber": 1,
+        "Name": "Y",
+        "GroupId": "Gantry1",
+        "MaxVelocity": 5000,
+        "MaxAcceleration": 20000,
+        "HomeSpeed": 100,
+        "HomeLatchSpeed": 10,
+        "SoftwareLowLimit": -1000,
+        "SoftwareHighLimit": 1000,
+        "HomeMode": 0,
+        "HomeDirection": 0
+      }
+    ]
+  }
+}

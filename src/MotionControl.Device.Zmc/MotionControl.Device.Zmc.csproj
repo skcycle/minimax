@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RootNamespace>MotionControl.Device.Zmc</RootNamespace>
+    <!-- ZMC SDK依赖 zauxdll.dll -->
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MotionControl.Device.Abstractions\MotionControl.Device.Abstractions.csproj" />
+    <ProjectReference Include="..\MotionControl.Infrastructure\MotionControl.Infrastructure.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- ZMC SDK文件 -->
+    <Compile Include="Native\Zmcaux.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- 运行时需要此DLL -->
+    <None Include="$(SolutionDir)libs\zauxdll.dll" CopyToOutputDirectory="PreserveNewest" Condition="Exists('$(SolutionDir)libs\zauxdll.dll')" />
+  </ItemGroup>
+
+</Project>
