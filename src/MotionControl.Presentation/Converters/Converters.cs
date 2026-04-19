@@ -6,6 +6,26 @@ using System.Windows.Media;
 namespace MotionControl.Presentation.Converters;
 
 /// <summary>
+/// 布尔值取反转换器
+/// </summary>
+public class InverseBoolConverter : IValueConverter
+{
+    public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+    {
+        if (value is bool boolValue)
+            return !boolValue;
+        return true;
+    }
+
+    public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+    {
+        if (value is bool boolValue)
+            return !boolValue;
+        return false;
+    }
+}
+
+/// <summary>
 /// 布尔转颜色转换器 - 用于状态显示
 /// </summary>
 public class BoolToBrushConverter : IValueConverter

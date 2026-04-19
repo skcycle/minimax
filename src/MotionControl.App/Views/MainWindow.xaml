@@ -12,6 +12,7 @@
         WindowStartupLocation="CenterScreen">
 
     <Window.Resources>
+        <converters:InverseBoolConverter x:Key="InverseBoolConverter"/>
         <converters:BoolToBrushConverter x:Key="BoolToBrushConverter"/>
         <converters:StateToColorConverter x:Key="StateToColorConverter"/>
         <converters:BoolToTextConverter x:Key="BoolToTextConverter"/>
