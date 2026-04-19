@@ -3,6 +3,7 @@ using MotionControl.Domain.Entities;
 using MotionControl.Domain.Interfaces;
 using MotionControl.Domain.ValueObjects;
 using MotionControl.Infrastructure.Logging;
+using MotionControl.Contracts.Events;
 
 namespace MotionControl.Application.Services;
 
@@ -68,17 +69,18 @@ public class AlarmAppService : IAlarmAppService
         _logger.Info("All alarms cleared");
     }
 
+    public void RecordAlarm(int axisId, int code, AlarmLevel level, string description)
+    {
+        var machine = _machineRepository.GetMachine();
+        var alarmCode = new AlarmCode(code, description);
+        machine.RaiseAlarm(axisId, alarmCode, level, description);
+        _alarmRecorder.RecordAlarm(axisId, alarmCode, level, description);
+        _logger.Warning($"Alarm raised: Axis {axisId}, Code {code}, {description}");
+    }
+
     public async Task ExportHistoryAsync(string filePath, CancellationToken ct = default)
     {
         await _alarmRecorder.ExportAsync(filePath, ct);
         _logger.Info($"Alarm history exported to {filePath}");
-    }
-
-    public void RecordAlarm(int axisId, AlarmCode code, AlarmLevel level, string description)
-    {
-        var machine = _machineRepository.GetMachine();
-        machine.RaiseAlarm(axisId, code, level, description);
-        _alarmRecorder.RecordAlarm(axisId, code, level, description);
-        _logger.Warning($"Alarm raised: Axis {axisId}, Code {code.Code}, {description}");
     }
 }

@@ -64,8 +64,8 @@ public class MainWindowViewModel : ViewModelBase
         // 创建子ViewModels
         ConnectionTestViewModel = new ConnectionTestViewModel(systemService, pollingService, machineRepository);
         AxisDebugViewModel = new AxisDebugViewModel(homingService, motionService, axisAppService);
-        AxisMonitorViewModel = new AxisMonitorViewModel(machineRepository, pollingService);
-        DashboardViewModel = new DashboardViewModel(machineRepository, systemService);
+        AxisMonitorViewModel = new AxisMonitorViewModel(axisAppService, motionService);
+        DashboardViewModel = new DashboardViewModel(systemService, axisAppService);
 
         // 启动定时器
         _timer = new DispatcherTimer

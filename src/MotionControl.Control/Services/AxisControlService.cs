@@ -156,15 +156,13 @@ public class AxisControlService : IAxisControlService
             return false;
         }
 
-        // 转换为控制器HomeProfile
+        // 使用控制器HomeProfile
         var zmcProfile = new Device.Abstractions.Controllers.HomeProfile(
             profile.SearchSpeed,
             profile.LatchSpeed,
             profile.Accel,
             profile.HomeMode,
-            profile.HomeDirection,
-            profile.HomeOffset,
-            profile.HomePosition
+            profile.HomeDirection
         );
 
         var result = await _controller.HomeAxisAsync(axis.ControllerAxisNo, zmcProfile, ct);

@@ -69,12 +69,12 @@ public class GroupMotionService : IGroupMotionService
         var results = new List<bool>();
         foreach (var axis in group.Axes)
         {
-            // 使用默认回零参数
-            var profile = new Domain.ValueObjects.HomeProfile(
+            // 使用回零参数
+            var profile = new Device.Abstractions.Controllers.HomeProfile(
                 axis.Parameters.HomeSpeed,
                 axis.Parameters.HomeLatchSpeed,
                 axis.Parameters.DefaultAccel,
-                0,  // 默认回零模式
+                0,
                 0
             );
             var result = await _axisControlService.HomeAsync(axis, profile, ct);

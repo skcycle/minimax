@@ -1,7 +1,9 @@
 using System.Windows;
 using Microsoft.Extensions.DependencyInjection;
 using MotionControl.App.Bootstrap;
+using MotionControl.App.Views;
 using MotionControl.Application.Services;
+using MotionControl.Device.Abstractions.Controllers;
 using MotionControl.Presentation.ViewModels;
 
 namespace MotionControl.App;
@@ -9,7 +11,7 @@ namespace MotionControl.App;
 /// <summary>
 /// App.xaml 的交互逻辑
 /// </summary>
-public partial class App : Application
+public partial class App : System.Windows.Application
 {
     private IServiceProvider? _serviceProvider;
 
@@ -29,7 +31,7 @@ public partial class App : Application
 
         // 启动状态轮询服务
         var pollingService = _serviceProvider.GetRequiredService<IStatePollingService>();
-        _ = pollingService.StartAsync();
+        pollingService.Start();
 
         mainWindow.Show();
     }

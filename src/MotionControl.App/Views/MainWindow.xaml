@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:views="clr-namespace:MotionControl.App.Views"
-        xmlns:converters="clr-namespace:MotionControl.Presentation.Converters"
+        xmlns:converters="clr-namespace:MotionControl.Presentation.Converters;assembly=MotionControl.Presentation"
         mc:Ignorable="d"
         Title="MotionControl - 32轴运动控制系统"
         Height="800" Width="1400"
@@ -12,9 +12,10 @@
         WindowStartupLocation="CenterScreen">
 
     <Window.Resources>
-        <converters:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
-        <converters:InverseBoolConverter x:Key="InverseBoolConverter"/>
         <converters:BoolToBrushConverter x:Key="BoolToBrushConverter"/>
+        <converters:StateToColorConverter x:Key="StateToColorConverter"/>
+        <converters:BoolToTextConverter x:Key="BoolToTextConverter"/>
+        <converters:ConnectionStatusToBrushConverter x:Key="ConnectionStatusToBrushConverter"/>
 
         <!-- TabControl样式 -->
         <Style TargetType="TabItem">
@@ -115,7 +116,7 @@
 
                 <TextBlock Grid.Column="0" Text="{Binding StatusMessage}" Foreground="White" FontSize="12"/>
 
-                <TextBlock Grid.Column="1" Text="{Binding CurrentTime}" Foreground="#CCCCCC" FontSize="12" Margin="20,0"/>
+                <TextBlock Grid.Column="1" x:Name="TimeText" Text="{Binding CurrentTime}" Foreground="#CCCCCC" FontSize="12" Margin="20,0"/>
 
                 <TextBlock Grid.Column="2" Text="v1.0.0" Foreground="#888888" FontSize="12"/>
             </Grid>

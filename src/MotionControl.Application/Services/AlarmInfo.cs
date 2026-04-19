@@ -1,5 +1,5 @@
 using MotionControl.Domain.ValueObjects;
-using MotionControl.Domain.Enums;
+using MotionControl.Contracts.Events;
 
 namespace MotionControl.Application.Services;
 

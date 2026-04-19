@@ -1,5 +1,6 @@
 using System.Windows.Input;
 using MotionControl.Application.Services;
+using MotionControl.Device.Abstractions.Controllers;
 using MotionControl.Domain.ValueObjects;
 using MotionControl.Presentation.Commands;
 

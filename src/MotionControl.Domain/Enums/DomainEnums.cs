@@ -1,3 +1,5 @@
+using MotionControl.Contracts.Events;
+
 namespace MotionControl.Domain.Enums;
 
 /// <summary>
@@ -64,17 +66,6 @@ public enum HomeState
     Homing,
     Homed,
     Failed
-}
-
-/// <summary>
-/// 报警级别
-/// </summary>
-public enum AlarmLevel
-{
-    Info,
-    Warning,
-    Fault,
-    Critical
 }
 
 /// <summary>

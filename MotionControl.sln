@@ -7,29 +7,29 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{A1B2C3D4-000
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{A1B2C3D4-0002-0002-0002-000000000002}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MotionControl.App", "{A1B2C3D4-1001-0001-0001-000000000001}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MotionControl.App", "src\MotionControl.App\MotionControl.App.csproj", "{A1B2C3D4-1001-0001-0001-000000000001}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MotionControl.Presentation", "{A1B2C3D4-1002-0002-0002-000000000002}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MotionControl.Presentation", "src\MotionControl.Presentation\MotionControl.Presentation.csproj", "{A1B2C3D4-1002-0002-0002-000000000002}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MotionControl.Application", "{A1B2C3D4-1003-0003-0003-000000000003}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MotionControl.Application", "src\MotionControl.Application\MotionControl.Application.csproj", "{A1B2C3D4-1003-0003-0003-000000000003}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MotionControl.Domain", "{A1B2C3D4-1004-0004-0004-000000000004}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MotionControl.Domain", "src\MotionControl.Domain\MotionControl.Domain.csproj", "{A1B2C3D4-1004-0004-0004-000000000004}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MotionControl.Control", "{A1B2C3D4-1005-0005-0005-000000000005}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MotionControl.Control", "src\MotionControl.Control\MotionControl.Control.csproj", "{A1B2C3D4-1005-0005-0005-000000000005}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MotionControl.Device.Abstractions", "{A1B2C3D4-1006-0006-0006-000000000006}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MotionControl.Device.Abstractions", "src\MotionControl.Device.Abstractions\MotionControl.Device.Abstractions.csproj", "{A1B2C3D4-1006-0006-0006-000000000006}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MotionControl.Device.Zmc", "{A1B2C3D4-1007-0007-0007-000000000007}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MotionControl.Device.Zmc", "src\MotionControl.Device.Zmc\MotionControl.Device.Zmc.csproj", "{A1B2C3D4-1007-0007-0007-000000000007}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MotionControl.Infrastructure", "{A1B2C3D4-1008-0008-0008-000000000008}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MotionControl.Infrastructure", "src\MotionControl.Infrastructure\MotionControl.Infrastructure.csproj", "{A1B2C3D4-1008-0008-0008-000000000008}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MotionControl.Diagnostics", "{A1B2C3D4-1009-0009-0009-000000000009}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MotionControl.Diagnostics", "src\MotionControl.Diagnostics\MotionControl.Diagnostics.csproj", "{A1B2C3D4-1009-0009-0009-000000000009}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MotionControl.Contracts", "{A1B2C3D4-100A-000A-000A-00000000000A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MotionControl.Contracts", "src\MotionControl.Contracts\MotionControl.Contracts.csproj", "{A1B2C3D4-100A-000A-000A-00000000000A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MotionControl.Domain.Tests", "{A1B2C3D4-2001-0001-0001-000000000001}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MotionControl.Domain.Tests", "tests\MotionControl.Domain.Tests\MotionControl.Domain.Tests.csproj", "{A1B2C3D4-2001-0001-0001-000000000001}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MotionControl.Control.Tests", "{A1B2C3D4-2002-0002-0002-000000000002}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MotionControl.Control.Tests", "tests\MotionControl.Control.Tests\MotionControl.Control.Tests.csproj", "{A1B2C3D4-2002-0002-0002-000000000002}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,6 +41,46 @@ Global
 		{A1B2C3D4-1001-0001-0001-000000000001}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A1B2C3D4-1001-0001-0001-000000000001}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A1B2C3D4-1001-0001-0001-000000000001}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1B2C3D4-1002-0002-0002-000000000002}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1B2C3D4-1002-0002-0002-000000000002}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1B2C3D4-1002-0002-0002-000000000002}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1B2C3D4-1002-0002-0002-000000000002}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1B2C3D4-1003-0003-0003-000000000003}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1B2C3D4-1003-0003-0003-000000000003}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1B2C3D4-1003-0003-0003-000000000003}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1B2C3D4-1003-0003-0003-000000000003}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1B2C3D4-1004-0004-0004-000000000004}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1B2C3D4-1004-0004-0004-000000000004}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1B2C3D4-1004-0004-0004-000000000004}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1B2C3D4-1004-0004-0004-000000000004}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1B2C3D4-1005-0005-0005-000000000005}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1B2C3D4-1005-0005-0005-000000000005}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1B2C3D4-1005-0005-0005-000000000005}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1B2C3D4-1005-0005-0005-000000000005}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1B2C3D4-1006-0006-0006-000000000006}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1B2C3D4-1006-0006-0006-000000000006}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1B2C3D4-1006-0006-0006-000000000006}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1B2C3D4-1006-0006-0006-000000000006}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1B2C3D4-1007-0007-0007-000000000007}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1B2C3D4-1007-0007-0007-000000000007}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1B2C3D4-1007-0007-0007-000000000007}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1B2C3D4-1007-0007-0007-000000000007}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1B2C3D4-1008-0008-0008-000000000008}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1B2C3D4-1008-0008-0008-000000000008}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1B2C3D4-1008-0008-0008-000000000008}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1B2C3D4-1008-0008-0008-000000000008}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1B2C3D4-1009-0009-0009-000000000009}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1B2C3D4-1009-0009-0009-000000000009}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1B2C3D4-1009-0009-0009-000000000009}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1B2C3D4-1009-0009-0009-000000000009}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1B2C3D4-100A-000A-000A-00000000000A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1B2C3D4-100A-000A-000A-00000000000A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1B2C3D4-100A-000A-000A-00000000000A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1B2C3D4-100A-000A-000A-00000000000A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1B2C3D4-2001-0001-0001-000000000001}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1B2C3D4-2001-0001-0001-000000000001}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1B2C3D4-2002-0002-0002-000000000002}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1B2C3D4-2002-0002-0002-000000000002}.Release|Any CPU.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

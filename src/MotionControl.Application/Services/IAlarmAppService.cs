@@ -10,39 +10,30 @@ public interface IAlarmAppService
     /// <summary>
     /// 获取所有活动报警
     /// </summary>
-    IReadOnlyList<AlarmDto> GetActiveAlarms();
+    IReadOnlyList<AlarmInfo> GetActiveAlarms();
 
     /// <summary>
     /// 获取报警历史
     /// </summary>
-    IReadOnlyList<AlarmDto> GetAlarmHistory(DateTime? startTime = null, DateTime? endTime = null);
+    IReadOnlyList<AlarmInfo> GetAlarmHistory(DateTime? startTime = null, DateTime? endTime = null);
 
     /// <summary>
     /// 清除报警
     /// </summary>
-    Task<CommandResultDto> ClearAlarmAsync(int alarmId, CancellationToken ct = default);
+    void ClearAlarm(int alarmId);
 
     /// <summary>
     /// 清除所有报警
     /// </summary>
-    Task<CommandResultDto> ClearAllAlarmsAsync(CancellationToken ct = default);
+    void ClearAllAlarms();
 
     /// <summary>
-    /// 复位轴报警
+    /// 记录报警
     /// </summary>
-    Task<CommandResultDto> ResetAxisAlarmAsync(int axisNumber, CancellationToken ct = default);
-}
+    void RecordAlarm(int axisId, int code, AlarmLevel level, string description);
 
-/// <summary>
-/// 报警DTO
-/// </summary>
-public record AlarmDto(
-    int Id,
-    int AxisId,
-    int AlarmCode,
-    string Description,
-    AlarmLevel Level,
-    DateTime OccurredAt,
-    DateTime? ClearedAt,
-    bool IsActive
-);
+    /// <summary>
+    /// 导出历史记录
+    /// </summary>
+    Task ExportHistoryAsync(string filePath, CancellationToken ct = default);
+}

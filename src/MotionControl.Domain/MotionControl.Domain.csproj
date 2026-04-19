@@ -7,4 +7,8 @@
     <RootNamespace>MotionControl.Domain</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\MotionControl.Contracts\MotionControl.Contracts.csproj" />
+  </ItemGroup>
+
 </Project>

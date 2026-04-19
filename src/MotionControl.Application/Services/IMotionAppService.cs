@@ -68,16 +68,3 @@ public record HomeStatusDto(
     string HomeState,
     double HomePosition
 );
-
-/// <summary>
-/// 回零配置DTO
-/// </summary>
-public record HomeProfile(
-    double SearchSpeed,
-    double LatchSpeed,
-    double Accel,
-    int HomeMode,
-    int HomeDirection,
-    double HomeOffset = 0,
-    double HomePosition = 0
-);

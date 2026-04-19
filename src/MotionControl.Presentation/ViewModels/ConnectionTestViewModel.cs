@@ -109,7 +109,7 @@ public class ConnectionTestViewModel : ViewModelBase
             AppendResult($"✓ 连接成功: {IpAddress}:{Port}");
 
             // 获取控制器信息
-            var info = await _systemService.GetSystemStatus();
+            var info = _systemService.GetSystemStatus();
             ControllerInfo = $"控制器: ZMC432 | 轴数: {info.TotalAxes}";
         }
         else
@@ -217,13 +217,6 @@ public class ConnectionTestViewModel : ViewModelBase
 
         try
         {
-            // 使用Application层的AxisAppService
-            var appService = new AxisAppService(
-                new Device.Abstractions.Controllers.ZmcMotionController(
-                    new Infrastructure.Logging.ConsoleLogger("Test")),
-                _machineRepository,
-                new Infrastructure.Logging.ConsoleLogger("Test"));
-
             AppendResult("注意: 此测试需要在实际控制器上执行");
 
             AppendResult("--- 使能测试完成 ---");

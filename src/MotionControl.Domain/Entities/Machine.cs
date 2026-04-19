@@ -1,5 +1,6 @@
 using MotionControl.Domain.Enums;
 using MotionControl.Domain.ValueObjects;
+using MotionControl.Contracts.Events;
 
 namespace MotionControl.Domain.Entities;
 
@@ -169,7 +170,7 @@ public class Machine
             }
 
             var alarm = new Alarm(
-                Id: _alarms.Count + 1,
+                id: _alarms.Count + 1,
                 axisId: axisId,
                 code: code,
                 level: level,

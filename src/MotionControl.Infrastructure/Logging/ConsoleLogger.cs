@@ -45,35 +45,27 @@ public class ConsoleLogger : ILogger
         Log(LogLevel.Fatal, fullMessage);
     }
 
-    private void Log(LogLevel level, string message)
+    private void Log(LogLevel level, string message, params object[] args)
     {
         if (level < _minLevel) return;
 
+        var formattedMessage = args.Length > 0
+            ? string.Format(message, args)
+            : message;
+
         var timestamp = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff");
         var levelStr = level.ToString().ToUpper().PadRight(7);
-        var formattedMessage = $"[{timestamp}] [{levelStr}] [{_categoryName}] {message}";
+        var output = $"[{timestamp}] [{levelStr}] [{_categoryName}] {formattedMessage}";
 
         switch (level)
         {
             case LogLevel.Error:
             case LogLevel.Fatal:
-                Console.Error.WriteLine(formattedMessage);
+                Console.Error.WriteLine(output);
                 break;
             default:
-                Console.WriteLine(formattedMessage);
+                Console.WriteLine(output);
                 break;
         }
     }
-}
-
-/// <summary>
-/// 日志级别
-/// </summary>
-public enum LogLevel
-{
-    Debug = 0,
-    Info = 1,
-    Warning = 2,
-    Error = 3,
-    Fatal = 4
 }

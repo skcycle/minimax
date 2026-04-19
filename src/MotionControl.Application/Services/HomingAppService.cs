@@ -42,15 +42,13 @@ public class HomingAppService : IHomingAppService
             return CommandResultDto.Fail(-1, reason!);
         }
 
-        // 转换HomeProfile
-        var zmcProfile = new MotionControl.Device.Abstractions.Controllers.HomeProfile(
+        // 使用HomeProfile (已在Device.Abstractions.Controllers中定义)
+        var zmcProfile = new HomeProfile(
             profile.SearchSpeed,
             profile.LatchSpeed,
             profile.Accel,
             profile.HomeMode,
-            profile.HomeDirection,
-            profile.HomeOffset,
-            profile.HomePosition
+            profile.HomeDirection
         );
 
         var result = await _controller.HomeAxisAsync(axisNumber, zmcProfile, ct);
@@ -77,7 +75,7 @@ public class HomingAppService : IHomingAppService
             SearchSpeed: 100,
             LatchSpeed: 10,
             Accel: 5000,
-            HomeMode: 0, // 原点限位回零
+            HomeMode: 0,
             HomeDirection: 0
         );
 

@@ -1,3 +1,4 @@
+using System.ComponentModel;
 using MotionControl.Contracts.Constants;
 using MotionControl.Contracts.Events;
 using MotionControl.Device.Abstractions.Controllers;
@@ -12,7 +13,7 @@ namespace MotionControl.Application.Services;
 /// 控制器状态轮询服务
 /// 周期性读取32轴状态，更新领域对象，发布事件
 /// </summary>
-public interface IStatePollingService : IDisposable
+public interface IStatePollingService : IDisposable, INotifyPropertyChanged
 {
     /// <summary>
     /// 是否正在运行
@@ -49,6 +50,8 @@ public class ControllerPollingService : IStatePollingService
     private Task? _pollingTask;
     private bool _disposed;
 
+    public event PropertyChangedEventHandler? PropertyChanged;
+
     public bool IsRunning => _pollingTask != null && !_pollingTask.IsCompleted;
     public int PollingIntervalMs { get; set; } = SystemConstants.DefaultPollingIntervalMs;
 
@@ -70,6 +73,7 @@ public class ControllerPollingService : IStatePollingService
 
         _cts = new CancellationTokenSource();
         _pollingTask = Task.Run(() => PollLoop(_cts.Token), _cts.Token);
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(IsRunning)));
         _logger.Info($"State polling started, interval: {PollingIntervalMs}ms");
     }
 
@@ -80,6 +84,7 @@ public class ControllerPollingService : IStatePollingService
         _cts?.Cancel();
         _cts?.Dispose();
         _cts = null;
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(IsRunning)));
         _logger.Info("State polling stopped");
     }
 

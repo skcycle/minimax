@@ -1,4 +1,5 @@
 using Microsoft.Extensions.DependencyInjection;
+using MotionControl.App.Views;
 using MotionControl.Application.Services;
 using MotionControl.Control.Services;
 using MotionControl.Device.Abstractions.Controllers;

@@ -48,6 +48,17 @@ public record AxisMoveCommand(
 );
 
 /// <summary>
+/// 回零配置
+/// </summary>
+public record HomeProfile(
+    double SearchSpeed,      // 搜索速度
+    double LatchSpeed,       // 捕获速度
+    double Accel,            // 加速度
+    int HomeMode,            // 回零模式 (0=原点限位, 1=索引信号, 2=机械原点)
+    int HomeDirection        // 回零方向 (0=正向, 1=负向)
+);
+
+/// <summary>
 /// 运动控制器接口 - 上层唯一该依赖的控制器接口
 /// </summary>
 public interface IMotionController : IDisposable
