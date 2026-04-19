@@ -1,12 +1,20 @@
 <Application x:Class="MotionControl.App.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:converters="clr-namespace:MotionControl.Presentation.Converters;assembly=MotionControl.Presentation"
              StartupUri="pack://application:,,,/Views/MainWindow.xaml">
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <!-- 主题和样式 -->
             </ResourceDictionary.MergedDictionaries>
+
+            <!-- 转换器 -->
+            <converters:InverseBoolConverter x:Key="InverseBoolConverter"/>
+            <converters:BoolToBrushConverter x:Key="BoolToBrushConverter"/>
+            <converters:StateToColorConverter x:Key="StateToColorConverter"/>
+            <converters:BoolToTextConverter x:Key="BoolToTextConverter"/>
+            <converters:ConnectionStatusToBrushConverter x:Key="ConnectionStatusToBrushConverter"/>
 
             <!-- 全局颜色 -->
             <SolidColorBrush x:Key="PrimaryBrush" Color="#0078D4"/>
